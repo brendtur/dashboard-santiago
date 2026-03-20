@@ -1,0 +1,148 @@
+.habitos-wrap { display: flex; flex-direction: column; gap: 16px; }
+
+/* ── Header ── */
+.habitos-header {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 18px; padding: 16px 20px;
+  box-shadow: 0 4px 18px var(--shadow);
+}
+.habitos-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: var(--text); flex: 1; }
+
+.vista-toggle { display: flex; background: var(--bg2); border-radius: 20px; padding: 3px; gap: 3px; }
+.vista-btn { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.8rem; padding: 6px 16px; border-radius: 17px; border: none; cursor: pointer; background: transparent; color: var(--text2); transition: all 0.2s; }
+.vista-btn.active { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; }
+
+/* ── Vista Hoy ── */
+.hoy-wrap { display: flex; flex-direction: column; gap: 14px; }
+
+.resumen-dia {
+  display: flex; align-items: center; justify-content: space-between;
+  background: linear-gradient(135deg, rgba(201,167,240,0.15), rgba(245,167,199,0.1));
+  border: 1px solid rgba(201,167,240,0.3);
+  border-radius: 18px; padding: 18px 22px;
+  box-shadow: 0 4px 18px var(--shadow);
+}
+.resumen-dia__titulo { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem; color: var(--text); text-transform: capitalize; }
+.resumen-dia__sub { font-size: 0.8rem; color: var(--text2); margin-top: 4px; }
+.resumen-dia__circulo { position: relative; width: 64px; height: 64px; flex-shrink: 0; }
+.circulo-svg { width: 64px; height: 64px; }
+.circulo-pct { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.85rem; color: var(--text); }
+
+.habitos-lista {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 18px; overflow: hidden;
+  box-shadow: 0 4px 18px var(--shadow);
+}
+
+.habito-row {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px; cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.habito-row:last-of-type { border-bottom: none; }
+.habito-row:hover { background: rgba(201,167,240,0.06); }
+.habito-row--done { background: color-mix(in srgb, var(--hc) 6%, transparent); }
+.habito-row--done:hover { background: color-mix(in srgb, var(--hc) 10%, transparent); }
+
+.habito-check {
+  width: 24px; height: 24px; border-radius: 50%; border: 2px solid;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; color: white; font-weight: 900;
+  flex-shrink: 0; transition: all 0.2s;
+}
+.habito-emoji { font-size: 1.4rem; flex-shrink: 0; }
+.habito-info { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.habito-label { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.92rem; color: var(--text); }
+.habito-racha { font-size: 0.7rem; color: var(--text2); }
+.habito-xp { font-size: 0.7rem; font-weight: 800; color: var(--teal); font-family: 'Nunito', sans-serif; background: rgba(122,219,212,0.15); padding: 2px 8px; border-radius: 10px; }
+
+.agregar-habito-btn {
+  width: 100%; padding: 13px; border: none; background: transparent;
+  color: var(--text2); font-family: 'Nunito', sans-serif; font-weight: 700;
+  font-size: 0.82rem; cursor: pointer; transition: background 0.2s;
+}
+.agregar-habito-btn:hover { background: var(--bg2); }
+
+.all-done-banner {
+  background: linear-gradient(135deg, rgba(249,224,122,0.2), rgba(122,219,212,0.15));
+  border: 1px solid rgba(249,224,122,0.5);
+  border-radius: 14px; padding: 14px 18px;
+  text-align: center; font-family: 'Nunito', sans-serif;
+  font-weight: 800; font-size: 0.95rem; color: var(--text);
+}
+
+/* ── Vista Semana ── */
+.semana-habitos {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 18px; overflow-x: auto;
+  box-shadow: 0 4px 18px var(--shadow);
+}
+
+.semana-tabla {
+  display: grid;
+  grid-template-columns: 160px repeat(7, 1fr);
+  min-width: 600px;
+}
+
+.sh-esquina {
+  background: var(--bg2); border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border); height: 44px;
+  position: sticky; top: 0; z-index: 2;
+}
+.sh-dia-header {
+  height: 44px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 3px;
+  background: var(--bg2); border-bottom: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 2;
+}
+.sh-dia-header--hoy { background: linear-gradient(135deg, rgba(201,167,240,0.2), rgba(245,167,199,0.1)); }
+.sh-dia-nombre { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.75rem; color: var(--text); }
+.sh-hoy-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--lila); }
+
+.sh-habito-label {
+  display: flex; align-items: center; gap: 6px;
+  padding: 10px 12px; border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  background: var(--bg2);
+}
+.sh-label-texto { font-size: 0.75rem; font-weight: 700; color: var(--text); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sh-racha-mini { font-size: 0.65rem; color: var(--text2); white-space: nowrap; }
+
+.sh-celda {
+  height: 44px; border-top: 1px solid var(--border); border-left: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 800; cursor: pointer;
+  transition: all 0.2s; color: var(--text2);
+}
+.sh-celda:hover { background: rgba(201,167,240,0.1); }
+.sh-celda--done { color: white; font-size: 0.9rem; }
+.sh-celda--futuro { cursor: default; opacity: 0.3; }
+.sh-celda--futuro:hover { background: transparent; }
+
+/* ── Modal ── */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.modal { background: var(--card); border-radius: 20px; padding: 24px; width: 100%; max-width: 420px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); display: flex; flex-direction: column; gap: 12px; max-height: 90vh; overflow-y: auto; }
+.modal-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.1rem; color: var(--text); }
+.modal-label { font-size: 0.75rem; font-weight: 700; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; }
+.modal-input { width: 100%; border: 2px solid var(--border); border-radius: 10px; padding: 9px 12px; font-family: 'Quicksand', sans-serif; font-size: 0.9rem; color: var(--text); background: var(--bg); outline: none; box-sizing: border-box; }
+.modal-input:focus { border-color: var(--lila); }
+
+.emoji-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.emoji-btn { width: 36px; height: 36px; border-radius: 10px; border: 2px solid var(--border); background: var(--bg2); font-size: 1.1rem; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
+.emoji-btn:hover { transform: scale(1.15); }
+.emoji-btn.active { border-color: var(--lila); background: rgba(201,167,240,0.2); transform: scale(1.1); }
+
+.color-grid { display: flex; gap: 8px; flex-wrap: wrap; }
+.color-btn { width: 28px; height: 28px; border-radius: 50%; border: 3px solid transparent; cursor: pointer; transition: all 0.2s; }
+.color-btn:hover { transform: scale(1.2); }
+.color-btn.active { border-color: var(--text); transform: scale(1.15); }
+
+.modal-btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px; }
+.btn-primary { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; border: none; border-radius: 20px; padding: 8px 18px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+.btn-primary:hover:not(:disabled) { opacity: 0.88; transform: scale(1.03); }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-ghost { background: transparent; color: var(--text2); border: 1px solid var(--border); border-radius: 20px; padding: 8px 18px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+.btn-ghost:hover { background: var(--bg2); }

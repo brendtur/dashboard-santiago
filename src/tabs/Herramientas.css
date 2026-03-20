@@ -1,0 +1,69 @@
+.herr-wrap { display: flex; flex-direction: column; gap: 16px; }
+.herr-titulo-main { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: var(--text); }
+.herr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.herr-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 20px; box-shadow: 0 4px 18px var(--shadow); display: flex; flex-direction: column; gap: 12px; }
+.herr-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; color: var(--text); }
+
+/* Cronómetro */
+.crono-display { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 2.4rem; color: var(--text); text-align: center; letter-spacing: 2px; background: var(--bg2); border-radius: 12px; padding: 12px; }
+.crono-btns { display: flex; gap: 8px; justify-content: center; }
+.crono-laps { display: flex; flex-direction: column; gap: 4px; max-height: 120px; overflow-y: auto; border-top: 1px solid var(--border); padding-top: 8px; }
+.crono-lap { font-size: 0.78rem; color: var(--text2); padding: 3px 0; }
+.crono-lap strong { color: var(--lila); }
+
+/* Calculadora */
+.calc-expr { font-size: 0.75rem; color: var(--text2); text-align: right; min-height: 18px; }
+.calc-display { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.8rem; color: var(--text); text-align: right; background: var(--bg2); border-radius: 10px; padding: 10px 14px; word-break: break-all; }
+.calc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.calc-btn { padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg2); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--text); cursor: pointer; transition: all 0.15s; }
+.calc-btn:hover { background: rgba(201,167,240,0.2); }
+.calc-btn--eq { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; border-color: transparent; grid-column: span 2; }
+.calc-btn--eq:hover { opacity: 0.88; }
+
+/* Conversor */
+.conv-tasa-row { display: flex; align-items: center; gap: 8px; background: var(--bg2); border-radius: 10px; padding: 8px 12px; }
+.conv-tasa-txt { font-size: 0.8rem; color: var(--text2); font-weight: 700; flex: 1; }
+.conv-edit-btn { font-size: 0.72rem; padding: 4px 10px; }
+.conv-input-sm { border: 2px solid var(--border); border-radius: 8px; padding: 6px 10px; font-size: 0.85rem; color: var(--text); background: var(--bg); outline: none; width: 100px; }
+.conv-inputs { display: flex; align-items: center; gap: 10px; }
+.conv-field { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.conv-label { font-size: 0.72rem; font-weight: 700; color: var(--text2); }
+.conv-input { width: 100%; border: 2px solid var(--border); border-radius: 10px; padding: 10px 12px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem; color: var(--text); background: var(--bg); outline: none; box-sizing: border-box; }
+.conv-input:focus { border-color: var(--lila); }
+.conv-flecha { font-size: 1.2rem; color: var(--lila); flex-shrink: 0; }
+
+/* Buscador */
+.bus-motores { display: flex; gap: 6px; flex-wrap: wrap; }
+.bus-motor-btn { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.75rem; padding: 5px 12px; border-radius: 20px; border: 2px solid var(--border); background: transparent; color: var(--text2); cursor: pointer; transition: all 0.2s; }
+.bus-motor-btn.active { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; border-color: transparent; }
+.bus-row { display: flex; gap: 8px; }
+.bus-input { flex: 1; border: 2px solid var(--border); border-radius: 10px; padding: 9px 12px; font-family: 'Quicksand', sans-serif; font-size: 0.87rem; color: var(--text); background: var(--bg); outline: none; }
+.bus-input:focus { border-color: var(--lila); }
+
+/* To-do */
+.todo-add-row { display: flex; gap: 8px; }
+.todo-lista { display: flex; flex-direction: column; gap: 6px; max-height: 220px; overflow-y: auto; }
+.todo-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.todo-row:last-child { border-bottom: none; }
+.todo-row--done .todo-texto { text-decoration: line-through; color: var(--text2); }
+.todo-check { cursor: pointer; font-size: 1rem; flex-shrink: 0; }
+.todo-texto { flex: 1; font-size: 0.83rem; color: var(--text); }
+.lista-vacia { font-size: 0.8rem; color: var(--text2); text-align: center; padding: 12px 0; }
+
+/* Contraseña */
+.pwd-opciones { display: flex; gap: 12px; flex-wrap: wrap; }
+.pwd-opcion { display: flex; align-items: center; gap: 5px; font-size: 0.8rem; color: var(--text2); font-weight: 700; cursor: pointer; }
+.pwd-opcion input { accent-color: var(--lila); width: 15px; height: 15px; }
+.pwd-longitud-row { display: flex; align-items: center; gap: 10px; }
+.pwd-long-label { font-size: 0.78rem; color: var(--text2); font-weight: 700; white-space: nowrap; }
+.pwd-result { display: flex; align-items: center; gap: 8px; background: var(--bg2); border-radius: 10px; padding: 10px 12px; }
+.pwd-code { flex: 1; font-family: monospace; font-size: 0.85rem; color: var(--text); word-break: break-all; }
+.pwd-copy { font-size: 0.75rem; padding: 5px 12px; white-space: nowrap; }
+.pwd-copy.copiado { border-color: var(--teal); color: var(--teal); }
+
+.del-btn { background: none; border: none; cursor: pointer; color: var(--text2); font-size: 0.72rem; opacity: 0.35; transition: opacity 0.2s; padding: 2px 5px; }
+.del-btn:hover { opacity: 1; color: #e05555; }
+.btn-primary { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; border: none; border-radius: 20px; padding: 8px 18px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+.btn-primary:hover:not(:disabled) { opacity: 0.88; transform: scale(1.03); }
+.btn-ghost { background: transparent; color: var(--text2); border: 1px solid var(--border); border-radius: 20px; padding: 8px 18px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+.btn-ghost:hover { background: var(--bg2); }

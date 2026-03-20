@@ -1,0 +1,106 @@
+.roadmap-wrap { display: flex; flex-direction: column; gap: 16px; }
+
+/* ── Header ── */
+.roadmap-header {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  background: linear-gradient(135deg, rgba(201,167,240,0.15), rgba(245,167,199,0.1));
+  border: 1px solid rgba(201,167,240,0.35);
+  border-radius: 18px; padding: 20px 24px;
+  box-shadow: 0 4px 18px var(--shadow);
+}
+.roadmap-header__left { flex: 1; }
+.roadmap-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.3rem; color: var(--text); }
+.roadmap-sub { font-size: 0.8rem; color: var(--text2); margin-top: 4px; }
+
+.roadmap-global { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; min-width: 180px; }
+.global-pct { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 2rem; background: linear-gradient(135deg, var(--lila), var(--rosa)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+.global-label { font-size: 0.7rem; color: var(--text2); text-transform: uppercase; letter-spacing: 0.07em; }
+.global-bar-bg { width: 180px; height: 8px; background: var(--bg2); border-radius: 99px; overflow: hidden; }
+.global-bar-fill { height: 100%; background: linear-gradient(90deg, var(--lila), var(--rosa)); border-radius: 99px; transition: width 0.8s ease; }
+.global-sub { font-size: 0.72rem; color: var(--text2); }
+
+/* ── Grid áreas ── */
+.areas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+
+/* ── Área card ── */
+.area-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 18px; padding: 20px;
+  box-shadow: 0 4px 18px var(--shadow);
+  border-top: 3px solid var(--ac);
+  display: flex; flex-direction: column; gap: 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.area-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px var(--shadow); }
+
+.area-card__top { display: flex; align-items: flex-start; gap: 12px; }
+.area-emoji-wrap { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+.area-info { flex: 1; }
+.area-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; color: var(--text); margin-bottom: 4px; }
+.area-desc { font-size: 0.76rem; color: var(--text2); line-height: 1.5; }
+.area-edit-btn { background: none; border: none; cursor: pointer; font-size: 0.9rem; opacity: 0.35; transition: opacity 0.2s; padding: 4px; }
+.area-edit-btn:hover { opacity: 1; }
+
+/* Barra progreso */
+.area-progreso-row { display: flex; align-items: center; gap: 10px; }
+.area-bar-bg { flex: 1; height: 8px; background: var(--bg2); border-radius: 99px; overflow: hidden; }
+.area-bar-fill { height: 100%; border-radius: 99px; transition: width 0.6s ease; }
+.area-pct { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.82rem; min-width: 36px; text-align: right; }
+
+/* Pasos */
+.pasos-preview { display: flex; flex-direction: column; gap: 8px; }
+.paso-item {
+  display: flex; align-items: center; gap: 10px;
+  cursor: pointer; padding: 4px 0;
+  transition: opacity 0.2s;
+}
+.paso-item:hover { opacity: 0.8; }
+.paso-item--done .paso-texto { text-decoration: line-through; color: var(--text2); }
+
+.paso-check {
+  width: 20px; height: 20px; border-radius: 50%; border: 2px solid;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; color: white; font-weight: 900;
+  flex-shrink: 0; transition: all 0.2s;
+}
+.paso-texto { font-size: 0.82rem; color: var(--text); flex: 1; line-height: 1.4; }
+.paso-xp { font-size: 0.65rem; font-weight: 800; color: var(--teal); font-family: 'Nunito', sans-serif; white-space: nowrap; }
+
+.ver-mas-btn {
+  background: none; border: none; color: var(--text2); font-size: 0.75rem;
+  font-weight: 700; cursor: pointer; padding: 4px 0; font-family: 'Nunito', sans-serif;
+  transition: color 0.2s; text-align: left;
+}
+.ver-mas-btn:hover { color: var(--lila); }
+
+.area-completada {
+  background: linear-gradient(135deg, rgba(249,224,122,0.2), rgba(122,219,212,0.15));
+  border: 1px solid rgba(249,224,122,0.5);
+  border-radius: 10px; padding: 8px 12px;
+  text-align: center; font-family: 'Nunito', sans-serif;
+  font-weight: 800; font-size: 0.82rem; color: #b8860b;
+}
+
+/* ── Modal ── */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.modal { background: var(--card); border-radius: 20px; padding: 24px; width: 100%; max-width: 460px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); display: flex; flex-direction: column; gap: 12px; max-height: 90vh; overflow-y: auto; }
+.modal-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.1rem; color: var(--text); }
+.modal-label { font-size: 0.75rem; font-weight: 700; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; }
+.modal-input { width: 100%; border: 2px solid var(--border); border-radius: 10px; padding: 9px 12px; font-family: 'Quicksand', sans-serif; font-size: 0.9rem; color: var(--text); background: var(--bg); outline: none; box-sizing: border-box; }
+.modal-input:focus { border-color: var(--lila); }
+
+.pasos-edit-lista { display: flex; flex-direction: column; gap: 6px; max-height: 200px; overflow-y: auto; }
+.paso-edit-item { display: flex; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--border); }
+.paso-edit-item span { flex: 1; font-size: 0.82rem; color: var(--text); }
+.paso-done-txt { text-decoration: line-through; color: var(--text2) !important; }
+.paso-del { background: none; border: none; cursor: pointer; color: var(--text2); font-size: 0.75rem; opacity: 0.5; transition: opacity 0.2s; }
+.paso-del:hover { opacity: 1; color: #e05555; }
+
+.paso-add-row { display: flex; gap: 8px; }
+.paso-add-row .modal-input { flex: 1; }
+
+.modal-btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px; }
+.btn-primary { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; border: none; border-radius: 20px; padding: 8px 18px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+.btn-primary:hover:not(:disabled) { opacity: 0.88; transform: scale(1.03); }
+.btn-ghost { background: transparent; color: var(--text2); border: 1px solid var(--border); border-radius: 20px; padding: 8px 18px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+.btn-ghost:hover { background: var(--bg2); }

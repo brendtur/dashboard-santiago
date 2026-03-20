@@ -1,0 +1,62 @@
+.diario-wrap { display: flex; flex-direction: column; gap: 16px; }
+
+.diario-header { background: linear-gradient(135deg, rgba(201,167,240,0.15), rgba(245,167,199,0.1)); border: 1px solid rgba(201,167,240,0.35); border-radius: 18px; padding: 18px 22px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; box-shadow: 0 4px 18px var(--shadow); }
+.diario-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: var(--text); }
+.diario-fecha { font-size: 0.78rem; color: var(--text2); margin-top: 2px; text-transform: capitalize; }
+.diario-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+.diario-tab { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.78rem; padding: 6px 14px; border-radius: 20px; border: 2px solid var(--border); background: transparent; color: var(--text2); cursor: pointer; transition: all 0.2s; }
+.diario-tab:hover { background: var(--bg2); }
+.diario-tab.active { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; border-color: transparent; }
+
+.diario-seccion { display: flex; flex-direction: column; gap: 14px; }
+.diario-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 20px; box-shadow: 0 4px 18px var(--shadow); display: flex; flex-direction: column; gap: 12px; }
+.diario-card-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; color: var(--text); }
+.diario-hint { font-size: 0.78rem; color: var(--text2); margin-top: -4px; }
+
+/* Mood */
+.mood-fila { display: flex; gap: 8px; flex-wrap: wrap; }
+.mood-btn { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 10px 12px; border-radius: 14px; border: 2px solid var(--border); background: transparent; cursor: pointer; transition: all 0.2s; }
+.mood-btn:hover { background: var(--bg2); transform: scale(1.08); }
+.mood-btn.active { border-color: var(--lila); background: rgba(201,167,240,0.18); }
+.mood-emoji { font-size: 1.6rem; }
+.mood-label { font-size: 0.65rem; color: var(--text2); font-weight: 700; }
+.mood-seleccionado { font-size: 0.82rem; color: var(--text2); background: var(--bg2); border-radius: 10px; padding: 8px 12px; }
+.mood-seleccionado strong { color: var(--text); }
+
+/* Textarea */
+.diario-textarea { width: 100%; border: 2px solid var(--border); border-radius: 14px; padding: 14px; font-family: 'Quicksand', sans-serif; font-size: 0.9rem; color: var(--text); background: var(--bg); resize: vertical; outline: none; box-sizing: border-box; line-height: 1.7; }
+.diario-textarea:focus { border-color: var(--lila); }
+.diario-footer-row { display: flex; align-items: center; justify-content: space-between; }
+.diario-chars { font-size: 0.7rem; color: var(--text2); }
+
+/* Historial */
+.diario-vacio { background: var(--card); border: 2px dashed var(--border); border-radius: 18px; padding: 32px; text-align: center; color: var(--text2); font-size: 0.85rem; line-height: 1.8; }
+.historial-lista { display: flex; flex-direction: column; gap: 10px; }
+.hist-item { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; box-shadow: 0 4px 18px var(--shadow); cursor: pointer; transition: all 0.2s; }
+.hist-item:hover { border-color: var(--lila); }
+.hist-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.hist-left { display: flex; align-items: center; gap: 8px; }
+.hist-mood { font-size: 1.2rem; }
+.hist-fecha { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.85rem; color: var(--text); }
+.hist-hoy-badge { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; font-size: 0.62rem; font-weight: 800; padding: 2px 8px; border-radius: 10px; font-family: 'Nunito', sans-serif; }
+.hist-arrow { font-size: 0.75rem; color: var(--text2); }
+.hist-preview { font-size: 0.8rem; color: var(--text2); line-height: 1.5; }
+.hist-completo { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text); line-height: 1.7; white-space: pre-wrap; }
+
+/* Reflexiones */
+.ref-add-row { display: flex; gap: 8px; }
+.diario-input { flex: 1; border: 2px solid var(--border); border-radius: 10px; padding: 9px 12px; font-family: 'Quicksand', sans-serif; font-size: 0.87rem; color: var(--text); background: var(--bg); outline: none; }
+.diario-input:focus { border-color: var(--lila); }
+.reflexiones-lista { display: flex; flex-direction: column; gap: 10px; }
+.ref-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; box-shadow: 0 4px 18px var(--shadow); display: flex; align-items: flex-start; gap: 12px; border-left: 3px solid var(--lila); }
+.ref-comilla { font-size: 2rem; color: var(--lila); opacity: 0.4; line-height: 1; flex-shrink: 0; font-family: Georgia, serif; }
+.ref-texto { flex: 1; font-size: 0.88rem; color: var(--text); line-height: 1.6; font-style: italic; }
+.del-btn { background: none; border: none; cursor: pointer; color: var(--text2); font-size: 0.72rem; opacity: 0.35; transition: opacity 0.2s; padding: 2px 5px; flex-shrink: 0; }
+.del-btn:hover { opacity: 1; color: #e05555; }
+
+.btn-primary { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; border: none; border-radius: 20px; padding: 8px 18px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+.btn-primary:hover:not(:disabled) { opacity: 0.88; transform: scale(1.03); }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-primary.btn-success { background: linear-gradient(135deg, var(--teal), #5bc8b5); }
+.btn-ghost { background: transparent; color: var(--text2); border: 1px solid var(--border); border-radius: 20px; padding: 8px 18px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+.btn-ghost:hover { background: var(--bg2); }

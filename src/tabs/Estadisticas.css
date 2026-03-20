@@ -1,0 +1,60 @@
+.stats-wrap { display: flex; flex-direction: column; gap: 16px; }
+.stats-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: var(--text); }
+
+.stats-resumen { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+.resumen-chip { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px; text-align: center; box-shadow: 0 4px 18px var(--shadow); display: flex; flex-direction: column; gap: 4px; }
+.resumen-chip--lila { border-top: 3px solid var(--lila); }
+.resumen-chip--rosa { border-top: 3px solid var(--rosa); }
+.resumen-chip--teal { border-top: 3px solid var(--teal); }
+.resumen-chip--azul { border-top: 3px solid var(--azul); }
+.resumen-chip--amarillo { border-top: 3px solid var(--amarillo); }
+.rc-valor { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.4rem; color: var(--text); }
+.rc-label { font-size: 0.7rem; color: var(--text2); font-weight: 700; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.stats-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 20px; box-shadow: 0 4px 18px var(--shadow); display: flex; flex-direction: column; gap: 14px; }
+.stats-card-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; color: var(--text); }
+.stats-sub { font-size: 0.8rem; color: var(--text2); margin-top: -6px; }
+.stats-sub strong { color: var(--text); }
+
+/* XP */
+.xp-nivel-wrap { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.xp-nivel-circulo { position: relative; flex-shrink: 0; }
+.xp-nivel-txt { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.xp-nivel-num { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: var(--text); line-height: 1; }
+.xp-nivel-sub { font-size: 0.6rem; color: var(--text2); font-weight: 700; }
+.xp-info { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.xp-total { font-size: 0.82rem; color: var(--text); font-weight: 700; }
+.xp-falta { font-size: 0.78rem; color: var(--text2); }
+.xp-falta strong { color: var(--lila); }
+.xp-tips { display: flex; flex-direction: column; gap: 3px; margin-top: 4px; }
+.xp-tip { font-size: 0.7rem; color: var(--text2); padding: 2px 0; border-bottom: 1px solid var(--border); }
+
+/* Barras horas */
+.barras-wrap { display: flex; gap: 8px; align-items: flex-end; height: 120px; }
+.barra-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; }
+.barra-val { font-size: 0.65rem; font-weight: 700; color: var(--lila); font-family: 'Nunito', sans-serif; height: 14px; }
+.barra-bg { flex: 1; width: 100%; background: var(--bg2); border-radius: 6px; overflow: hidden; display: flex; align-items: flex-end; }
+.barra-fill { width: 100%; background: linear-gradient(180deg, var(--lila), var(--rosa)); border-radius: 6px; transition: height 0.5s ease; min-height: 0; }
+.barra-label { font-size: 0.62rem; color: var(--text2); font-weight: 700; }
+
+/* Hábitos semana */
+.habitos-semana-grid { display: flex; gap: 8px; justify-content: space-between; }
+.hab-dia-col { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; }
+.hab-circulo-bg { width: 36px; height: 36px; background: var(--bg2); border-radius: 50%; overflow: hidden; position: relative; display: flex; align-items: flex-end; }
+.hab-circulo-fill { width: 100%; background: linear-gradient(180deg, var(--teal), var(--azul)); transition: height 0.4s; }
+.hab-pct { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; font-weight: 900; color: var(--text); font-family: 'Nunito', sans-serif; }
+.hab-fecha { font-size: 0.6rem; color: var(--text2); font-weight: 700; }
+.habitos-lista-mini { display: flex; flex-direction: column; gap: 5px; border-top: 1px solid var(--border); padding-top: 10px; }
+.hab-mini-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: var(--text); }
+.hab-mini-estado { font-size: 0.8rem; }
+.hab-mini-estado.done { color: var(--teal); }
+
+/* Calendario actividad */
+.calendario-actividad { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; }
+.cal-dia { aspect-ratio: 1; border-radius: 4px; background: var(--bg2); transition: background 0.2s; }
+.cal-dia--activo { background: linear-gradient(135deg, var(--lila), var(--rosa)); }
+.racha-info { display: flex; gap: 10px; flex-wrap: wrap; }
+.racha-chip { font-size: 0.78rem; font-weight: 700; font-family: 'Nunito', sans-serif; padding: 6px 14px; border-radius: 20px; }
+.racha-chip--actual { background: rgba(249,224,122,0.2); color: #b8860b; border: 1px solid rgba(249,224,122,0.5); }
+.racha-chip--max { background: rgba(201,167,240,0.2); color: var(--lila); border: 1px solid rgba(201,167,240,0.4); }

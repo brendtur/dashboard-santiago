@@ -1,0 +1,93 @@
+.ej-wrap { display: flex; flex-direction: column; gap: 16px; }
+.ej-header { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 16px 20px; box-shadow: 0 4px 18px var(--shadow); display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.ej-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: var(--text); }
+.ej-sub { font-size: 0.8rem; color: var(--text2); margin-top: 2px; }
+.ej-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+.ej-tab { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.78rem; padding: 6px 14px; border-radius: 20px; border: 2px solid var(--border); background: transparent; color: var(--text2); cursor: pointer; transition: all 0.2s; }
+.ej-tab:hover { background: var(--bg2); }
+.ej-tab.active { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; border-color: transparent; }
+
+.ej-seccion { display: flex; flex-direction: column; gap: 14px; }
+.ej-input { width: 100%; border: 2px solid var(--border); border-radius: 10px; padding: 9px 12px; font-family: 'Quicksand', sans-serif; font-size: 0.9rem; color: var(--text); background: var(--bg); outline: none; box-sizing: border-box; }
+.ej-input:focus { border-color: var(--lila); }
+
+/* Chips días */
+.semana-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.dia-chip { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 10px 14px; border-radius: 14px; border: 2px solid var(--border); background: var(--card); flex: 1; min-width: 70px; }
+.dia-chip--hoy { border-color: var(--lila); background: rgba(201,167,240,0.1); }
+.dia-chip--activo { border-color: var(--dc); background: color-mix(in srgb, var(--dc) 10%, transparent); }
+.dia-chip-nombre { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.78rem; color: var(--text); }
+.dia-chip-tipo { font-size: 0.85rem; }
+
+/* Rutina card */
+.rutina-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 20px; box-shadow: 0 4px 18px var(--shadow); border-top: 3px solid var(--rc); }
+.rutina-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.rutina-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; color: var(--text); }
+.rutina-progreso { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.82rem; color: var(--text2); }
+
+.ejercicios-lista { display: flex; flex-direction: column; gap: 8px; }
+.ejercicio-row { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 12px; cursor: pointer; border: 1px solid var(--border); transition: all 0.2s; }
+.ejercicio-row:hover { background: var(--bg2); }
+.ejercicio-row--done { opacity: 0.6; background: var(--bg2); }
+.ej-check { width: 22px; height: 22px; border-radius: 50%; border: 2px solid; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: white; font-weight: 900; flex-shrink: 0; transition: all 0.2s; }
+.ej-info { flex: 1; }
+.ej-nombre { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.88rem; color: var(--text); }
+.ej-detalle { font-size: 0.72rem; color: var(--text2); margin-top: 2px; }
+.ej-xp { font-size: 0.68rem; font-weight: 800; color: var(--teal); font-family: 'Nunito', sans-serif; background: rgba(122,219,212,0.15); padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+
+.descanso-card { background: var(--bg2); border: 2px dashed var(--border); border-radius: 18px; padding: 28px; text-align: center; color: var(--text2); font-size: 0.85rem; line-height: 1.8; }
+
+.otras-rutinas { display: flex; flex-direction: column; gap: 10px; }
+.otras-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.9rem; color: var(--text); }
+.otra-rutina { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px; border-left: 3px solid var(--or); }
+.otra-rutina-header { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+.otra-dia { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.82rem; color: var(--text); }
+.otra-tipo { font-size: 0.78rem; font-weight: 700; color: var(--text2); }
+.otra-lista { font-size: 0.72rem; color: var(--text2); line-height: 1.5; }
+
+/* Contador */
+.contador-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 20px; box-shadow: 0 4px 18px var(--shadow); display: flex; flex-direction: column; gap: 12px; }
+.contador-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; color: var(--text); }
+.contador-display { display: flex; align-items: center; justify-content: center; gap: 20px; padding: 10px 0; }
+.cont-btn { width: 52px; height: 52px; border-radius: 50%; border: none; font-size: 1.8rem; font-weight: 900; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; justify-content: center; }
+.cont-btn--minus { background: rgba(245,167,199,0.2); color: var(--rosa); }
+.cont-btn--minus:hover { background: rgba(245,167,199,0.35); transform: scale(1.1); }
+.cont-btn--plus { background: rgba(201,167,240,0.2); color: var(--lila); }
+.cont-btn--plus:hover { background: rgba(201,167,240,0.35); transform: scale(1.1); }
+.cont-numero { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 3rem; color: var(--text); min-width: 80px; text-align: center; }
+.cont-hint { font-size: 0.75rem; color: var(--text2); text-align: center; }
+.cont-series-row { display: flex; gap: 8px; }
+.cont-series-lista { display: flex; flex-direction: column; gap: 6px; background: var(--bg2); border-radius: 12px; padding: 12px; }
+.cont-serie-chip { font-size: 0.78rem; color: var(--text); font-weight: 700; }
+.cont-total { font-size: 0.82rem; color: var(--text2); border-top: 1px solid var(--border); padding-top: 6px; margin-top: 2px; }
+.cont-total strong { color: var(--lila); }
+
+/* Peso */
+.peso-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 20px; box-shadow: 0 4px 18px var(--shadow); display: flex; flex-direction: column; gap: 12px; }
+.peso-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; color: var(--text); }
+.peso-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.peso-field { display: flex; flex-direction: column; gap: 4px; }
+.peso-label { font-size: 0.72rem; font-weight: 700; color: var(--text2); text-transform: uppercase; }
+.peso-stats { display: flex; gap: 10px; flex-wrap: wrap; }
+.peso-stat { background: var(--bg2); border-radius: 12px; padding: 10px 14px; display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.peso-stat-val { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: var(--text); }
+.peso-stat-label { font-size: 0.68rem; color: var(--text2); }
+.peso-historial { display: flex; flex-direction: column; gap: 4px; max-height: 200px; overflow-y: auto; }
+.peso-hist-row { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid var(--border); font-size: 0.8rem; }
+.peso-hist-fecha { color: var(--text2); }
+.peso-hist-val { font-weight: 700; color: var(--text); }
+
+/* Historial */
+.ej-vacio { background: var(--bg2); border: 2px dashed var(--border); border-radius: 18px; padding: 32px; text-align: center; color: var(--text2); font-size: 0.85rem; line-height: 1.8; }
+.hist-lista { display: flex; flex-direction: column; gap: 6px; }
+.hist-row { display: flex; align-items: center; gap: 10px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; font-size: 0.8rem; }
+.hist-fecha { font-size: 0.68rem; color: var(--rosa); font-weight: 700; font-family: 'Nunito', sans-serif; min-width: 80px; }
+.hist-ejercicio { flex: 1; color: var(--text); font-weight: 700; }
+.hist-series { color: var(--text2); min-width: 60px; }
+.hist-total { color: var(--lila); font-weight: 800; font-family: 'Nunito', sans-serif; }
+
+.btn-primary { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; border: none; border-radius: 20px; padding: 8px 18px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+.btn-primary:hover:not(:disabled) { opacity: 0.88; transform: scale(1.03); }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-ghost { background: transparent; color: var(--text2); border: 1px solid var(--border); border-radius: 20px; padding: 8px 18px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+.btn-ghost:hover { background: var(--bg2); }

@@ -1,0 +1,136 @@
+.horario-wrap { display: flex; flex-direction: column; gap: 16px; }
+
+.horario-header {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 18px; padding: 16px 20px;
+  box-shadow: 0 4px 18px var(--shadow);
+}
+.horario-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: var(--text); flex: 1; }
+
+.vista-toggle { display: flex; background: var(--bg2); border-radius: 20px; padding: 3px; gap: 3px; }
+.vista-btn { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.8rem; padding: 6px 16px; border-radius: 17px; border: none; cursor: pointer; background: transparent; color: var(--text2); transition: all 0.2s; }
+.vista-btn.active { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; }
+
+/* ── SEMANA ── */
+.semana-wrap {
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: 0 4px 18px var(--shadow);
+}
+
+.semana-grid {
+  display: grid;
+  grid-template-columns: 72px repeat(7, 1fr);
+  min-width: 720px;
+}
+
+.semana-esquina {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  height: 44px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.dia-header {
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  cursor: pointer;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  gap: 2px;
+  transition: background 0.2s;
+}
+.dia-header:hover { background: rgba(201,167,240,0.15); }
+.dia-header--hoy { background: linear-gradient(135deg, rgba(201,167,240,0.2), rgba(245,167,199,0.1)); }
+
+.dia-nombre { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.78rem; color: var(--text); }
+.hoy-badge { font-size: 0.55rem; background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; padding: 1px 6px; border-radius: 10px; font-weight: 800; }
+
+.hora-slot {
+  font-size: 0.62rem;
+  color: var(--text2);
+  padding: 4px 6px;
+  height: 52px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  background: var(--bg2);
+}
+
+.celda {
+  height: 52px;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.15s;
+  padding: 3px 4px;
+  overflow: hidden;
+}
+.celda:hover { background: rgba(201,167,240,0.08); }
+.celda--ocupada { cursor: default; background: transparent; }
+.celda--ocupada:hover { background: transparent; }
+
+.bloque-mini { display: flex; flex-direction: column; height: 100%; overflow: hidden; gap: 1px; }
+.bloque-mini__titulo { font-size: 0.63rem; font-weight: 700; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ── DÍA ── */
+.dia-wrap { display: flex; flex-direction: column; gap: 12px; }
+.dia-nav { display: flex; gap: 6px; flex-wrap: wrap; }
+.dia-nav-btn {
+  font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.8rem;
+  padding: 7px 14px; border-radius: 20px; border: 2px solid var(--border);
+  background: var(--card); color: var(--text2); cursor: pointer; transition: all 0.2s;
+}
+.dia-nav-btn:hover { background: var(--bg2); }
+.dia-nav-btn.active { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; border-color: transparent; }
+.dia-nav-btn.hoy { border-color: var(--lila); }
+
+.dia-timeline { background: var(--card); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: 0 4px 18px var(--shadow); }
+.timeline-fila { display: grid; grid-template-columns: 80px 1fr; border-top: 1px solid var(--border); min-height: 56px; }
+.timeline-fila:first-child { border-top: none; }
+.timeline-hora { font-size: 0.68rem; color: var(--text2); padding: 8px; display: flex; align-items: flex-start; padding-top: 10px; background: var(--bg2); }
+.timeline-celda { padding: 6px 10px; cursor: pointer; transition: background 0.15s; display: flex; align-items: center; min-height: 56px; }
+.timeline-celda:hover { background: rgba(201,167,240,0.06); }
+.timeline-celda--ocupada { cursor: default; }
+.timeline-bloque { display: flex; align-items: center; gap: 10px; width: 100%; }
+.timeline-emoji { font-size: 1.3rem; }
+.timeline-titulo { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; color: var(--text); }
+.timeline-tiempo { font-size: 0.7rem; color: var(--text2); margin-top: 2px; }
+.timeline-edit { margin-left: auto; background: none; border: none; cursor: pointer; font-size: 1rem; opacity: 0.5; transition: opacity 0.2s; }
+.timeline-edit:hover { opacity: 1; }
+.timeline-vacio { font-size: 0.72rem; color: var(--text2); opacity: 0.4; }
+
+/* ── MODAL ── */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.modal { background: var(--card); border-radius: 20px; padding: 24px; width: 100%; max-width: 420px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); display: flex; flex-direction: column; gap: 12px; }
+.modal-titulo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.1rem; color: var(--text); }
+.modal-label { font-size: 0.75rem; font-weight: 700; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; }
+.modal-input, .modal-select { width: 100%; border: 2px solid var(--border); border-radius: 10px; padding: 9px 12px; font-family: 'Quicksand', sans-serif; font-size: 0.9rem; color: var(--text); background: var(--bg); outline: none; box-sizing: border-box; }
+.modal-input:focus, .modal-select:focus { border-color: var(--lila); }
+.modal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.tipo-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.tipo-btn { padding: 6px 12px; border-radius: 20px; border: 2px solid color-mix(in srgb, var(--tc) 40%, transparent); background: color-mix(in srgb, var(--tc) 12%, transparent); font-size: 0.75rem; font-weight: 700; cursor: pointer; transition: all 0.2s; color: var(--text); font-family: 'Quicksand', sans-serif; }
+.tipo-btn.active { background: color-mix(in srgb, var(--tc) 30%, transparent); border-color: var(--tc); }
+.modal-btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px; flex-wrap: wrap; }
+.btn-danger { background: transparent; color: #e05555; border: 1px solid #e05555; border-radius: 20px; padding: 8px 16px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; margin-right: auto; }
+.btn-danger:hover { background: #e0555515; }
+.btn-primary { background: linear-gradient(135deg, var(--lila), var(--rosa)); color: white; border: none; border-radius: 20px; padding: 8px 18px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+.btn-primary:hover:not(:disabled) { opacity: 0.88; transform: scale(1.03); }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-ghost { background: transparent; color: var(--text2); border: 1px solid var(--border); border-radius: 20px; padding: 8px 18px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
+.btn-ghost:hover { background: var(--bg2); }
