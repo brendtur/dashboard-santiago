@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import useStore from '../store/useStore';
 import './Estudio.css';
+import { notifPomodoro } from '../notifications';
 
 const METODOS = [
   { id: 'feynman',   emoji: '🧠', nombre: 'Feynman',             desc: 'Explica el tema como si fuera a un niño de 10 años.',    placeholder: '¿Qué tema quieres explicar?',       instruccion: 'Escribe el tema y explícalo con tus propias palabras, sin tecnicismos. Si te trabas, ¡ahí está el hueco!', campo: 'Tema a explicar',     resultado: 'Tu explicación simple:' },
@@ -29,7 +30,11 @@ function Pomodoro({ addXP }) {
         setSegundos(s => {
           if (s <= 1) {
             clearInterval(ref.current); setCorriendo(false);
-            if (modo === 'enfoque') { addXP(20); setCiclos(c => { const n = c+1; lss('pomodoro-ciclos-'+todayKey(), n); return n; }); }
+            if (modo === 'enfoque') {
+              addXP(20);
+              notifPomodoro();
+              setCiclos(c => { const n = c+1; lss('pomodoro-ciclos-'+todayKey(), n); return n; });
+            }
             return 0;
           }
           return s - 1;

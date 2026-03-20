@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import useStore from './store/useStore';
+import { activarTodasLasNotificaciones, notifPomodoro } from './notifications';
 import Dashboard from './tabs/Dashboard';
 import Horario from './tabs/Horario';
 import Metas from './tabs/Metas';
@@ -86,6 +87,12 @@ export default function App() {
   useEffect(() => {
     applyDarkMode();
     checkAndUpdateStreak();
+    activarTodasLasNotificaciones({
+      horaHabitos: 20,
+      intervaloAgua: 2,
+      horaStream: 18,
+      horaHorario: 7,
+    });
   }, []);
 
   return (
